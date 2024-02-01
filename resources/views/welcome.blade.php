@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laravel Template</title>
+    <title>Laravel Comics</title>
     @vite('resources/js/app.js')
 </head>
 
 <body>
-    <h1>Laravel Template</h1>
+    <h1>Laravel Comics</h1>
+    <a href="{{ route('comics.index') }}">Vai alla lista fumetti</a>
 </body>
 
 </html>
