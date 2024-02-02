@@ -51,7 +51,7 @@
                     <input type="text" class="form-control" id="writers" name="writers"
                         value="{{ implode(', ', $comic->writers) }}">
                 </div>
-                <input type="submit" value="Invia">
+                <input type="submit" value="Modifica" class="btn btn-primary">
             </form>
         </div>
     </main>

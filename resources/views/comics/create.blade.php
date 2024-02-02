@@ -47,7 +47,7 @@
                     <label for="writers" class="form-label">Scrittore</label>
                     <input type="text" class="form-control" id="writers" name="writers">
                 </div>
-                <input type="submit" value="Invia">
+                <input type="submit" value="Aggiungi" class="btn btn-primary">
             </form>
         </div>
     </main>
