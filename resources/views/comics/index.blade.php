@@ -13,6 +13,12 @@
             @foreach ($comics as $comic)
                 <li>- {{ $comic->title }}
                     <a href="{{ route('comics.show', $comic->id) }}">Dettagli fumetto</a>
+                    <a href="{{ route('comics.edit', $comic->id) }}">Modifica fumetto</a>
+                    <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <input type="submit" value="Cancella">
+                    </form>
                 </li>
             @endforeach
         </ul>

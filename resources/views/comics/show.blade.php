@@ -27,6 +27,5 @@
             </ul>
             <a href="{{ route('comics.index') }}">Torna alla lista fumetti</a>
         </div>
-        <a href="{{ route('comics.index') }}">Torna alla lista fumetti</a>
     </main>
 @endsection

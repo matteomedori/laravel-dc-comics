@@ -13,4 +13,6 @@ class Comic extends Model
         'artists' => 'array',
         'writers' => 'array'
     ];
+
+    protected $guarded = [];
 }
