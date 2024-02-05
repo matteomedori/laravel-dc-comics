@@ -33,4 +33,25 @@ class UpdateComicRequest extends FormRequest
             'writers' => 'required',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'title.required' => 'Titolo richiesto',
+            'title.max' => 'Numero massimo caratteri: :max',
+            'description.required' => 'Descrizione richiesta',
+            'thumb.required' => 'Immagine richiesta',
+            'thumb.url' => 'Deve essere un url',
+            'price.required' => 'Prezzo richiesto',
+            'price.decimal' => 'Sono necessari :decimal decimali',
+            'series.required' => 'Serie fumetto richiesta',
+            'series.max' => 'Numero massimo caratteri: :max',
+            'sale_date.required' => "Data d'uscita richiesta",
+            'sale_date.date_format' => 'La data deve essere nel formato Y-M-D',
+            'type.required' => 'Tipo richiesto',
+            'type.max' => 'Numero massimo caratteri: :max',
+            'writers.required' => 'Scrittori richiesto',
+            'artists.required' => 'Artisti richiesti',
+        ];
+    }
 }
