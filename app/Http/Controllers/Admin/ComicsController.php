@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreComicRequest;
+use App\Http\Requests\UpdateComicRequest;
 use App\Models\Comic;
 use Illuminate\Http\Request;
 
@@ -28,19 +30,9 @@ class ComicsController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreComicRequest $request)
     {
-        $request->validate([
-            'title' => 'required|max:60',
-            'description' => 'required|string',
-            'thumb' => 'required|url',
-            'price' => 'required|decimal:2',
-            'series' => 'required|max:40',
-            'sale_date' => 'required|date_format:Y-m-d',
-            'type' => 'required|max:40',
-            'artists' => 'required',
-            'writers' => 'required',
-        ]);
+        $request->validated();
         $data = $request->all();
 
         $newcomic = new Comic();
@@ -73,19 +65,9 @@ class ComicsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Comic $comic)
+    public function update(UpdateComicRequest $request, Comic $comic)
     {
-        $request->validate([
-            'title' => 'required|max:60',
-            'description' => 'required|string',
-            'thumb' => 'required|url',
-            'price' => 'required|decimal:2',
-            'series' => 'required|max:40',
-            'sale_date' => 'required|date_format:Y-m-d',
-            'type' => 'required|max:40',
-            'artists' => 'required',
-            'writers' => 'required',
-        ]);
+        $request->validated();
         $data = $request->all();
         $data['artists']  = explode(', ',$data['artists']);
         $data['writers']  = explode(', ',$data['writers']);
